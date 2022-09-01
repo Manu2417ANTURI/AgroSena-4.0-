@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use spatie\Permission\Models\Role;
 
 class AdminUserController extends Controller
 {
@@ -57,7 +58,8 @@ class AdminUserController extends Controller
      */
     public function edit( User $user)
     {
-        return $user;
+        $roles = Role::all();
+        return view('users.edit', compact('user'));
     }
 
     /**
