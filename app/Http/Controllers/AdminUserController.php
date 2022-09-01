@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Redirect;
 use Spatie\Permission\Models\Role;
 
 class AdminUserController extends Controller
@@ -69,9 +70,11 @@ class AdminUserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        $user->roles()->sync($request->roles);
+        session()->flash("flas.banner" , "Rol asignado correctamente");
+        return Redirect::route("users.edit", $user);
     }
 
     /**
