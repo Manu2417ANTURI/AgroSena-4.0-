@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ActividadController;
+use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\CostoAdicionalController;
 use App\Http\Controllers\CultivoController;
 use App\Http\Controllers\FaseController;
@@ -30,6 +31,7 @@ Route::middleware([
     Route::get("/dashboard", function () {
         return view("dashboard");
     })->name("dashboard");
+    Route::resource('/users', AdminUserController::class);
     Route::resource("/cultivos", CultivoController::class);
     Route::resource("/fases", FaseController::class);
     Route::resource("/costos", CostoAdicionalController::class);

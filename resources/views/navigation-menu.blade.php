@@ -30,6 +30,9 @@
                     <x-jet-nav-link href="{{ route('costos.index') }}" :active="request()->routeIs('costos*')">
                         {{ __('Costos') }}
                     </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users*')">
+                        {{ __('Usuarios') }}
+                    </x-jet-nav-link>
 
                 </div>
             </div>
