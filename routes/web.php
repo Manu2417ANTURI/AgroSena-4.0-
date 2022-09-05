@@ -31,11 +31,11 @@ Route::middleware([
     Route::get("/dashboard", function () {
         return view("dashboard");
     })->name("dashboard");
-    Route::resource('/users', AdminUserController::class);
-    Route::resource("/cultivos", CultivoController::class);
-    Route::resource("/fases", FaseController::class);
-    Route::resource("/costos", CostoAdicionalController::class);
-    Route::resource("/actividades", ActividadController::class);
-    Route::resource("/insumos", InsumoController::class);
-    Route::post("/destroy_cultivo_fase", [CultivoController::class, 'destroyCultivoFase'])->name("destroyCultivoFase");
+    Route::resource('/users', AdminUserController::class)->middleware('can:users.index');
+    Route::resource("/cultivos", CultivoController::class)->middleware('can:Inicio cultivos');
+    Route::resource("/fases", FaseController::class)->middleware('can:Inicio fases');
+    Route::resource("/costos", CostoAdicionalController::class)->middleware('can:Inicio costos');
+    Route::resource("/actividades", ActividadController::class)->middleware('can:Inicio actividades');
+    Route::resource("/insumos", InsumoController::class)->middleware('can:Inicio insumos');
+    Route::post("/destroy_cultivo_fase", [CultivoController::class, 'destroyCultivoFase'])->middleware('can:Inicio cultivos')->name("destroyCultivoFase");
 });

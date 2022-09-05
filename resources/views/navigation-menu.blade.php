@@ -12,25 +12,39 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    @can('Dashboard')
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    @endcan
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
+                    @can('Inicio cultivos')
                     <x-jet-nav-link href="{{ route('cultivos.index') }}" :active="request()->routeIs('cultivos*')">
+                    @endcan
                         {{ __('Cultivos') }}
                     </x-jet-nav-link>
+                    @can('Inicio insumos')
                     <x-jet-nav-link href="{{ route('insumos.index') }}" :active="request()->routeIs('insumos*')">
+                    @endcan
                         {{ __('Insumos') }}
                     </x-jet-nav-link>
+                    @can('Inicio actividades')
                     <x-jet-nav-link href="{{ route('actividades.index') }}" :active="request()->routeIs('actividades*')">
+                    @endcan
                         {{ __('Actividades') }}
                     </x-jet-nav-link>
+                    @can('Inicio fases')
                     <x-jet-nav-link href="{{ route('fases.index') }}" :active="request()->routeIs('fases*')">
+                    @endcan
                         {{ __('Fases') }}
                     </x-jet-nav-link>
+                    @can('Inicio costos')
                     <x-jet-nav-link href="{{ route('costos.index') }}" :active="request()->routeIs('costos*')">
+                    @endcan
                         {{ __('Costos') }}
                     </x-jet-nav-link>
+                    @can('users.index')
                     <x-jet-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users*')">
+                    @endcan
                         {{ __('Usuarios') }}
                     </x-jet-nav-link>
 

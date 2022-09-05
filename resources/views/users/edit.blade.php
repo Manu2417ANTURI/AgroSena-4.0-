@@ -6,38 +6,33 @@
         </h2>
     </x-slot>
     @if(session('info'))
-    <div class= 'alert alert-sucess'>
-        <strong>{{session('info')}}</strong>
-        
-    </div>
-    @endif
+  <div class = "alert alert-primary">
+    <strong>{{session('info')}}</strong>
+  </div>
+  @endif
     
 <div class="card">
     <div class="card-body">
 
           <p class="h4">Nombre</p>
        <p class="form-control"> {{$user->name}}</p><br>
-<h2> Listado de roles</h2>
-        
+       <h2 class="h5"> Listado de roles</h2>
+       {!! Form::model($user, ['route' => ['users.update',$user], 'method'=> 'put'])!!}    
+          
        @foreach ($roles as $role)
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="role" id="role">
-            <label class="form-check-label" for="role">
-                {{$role->name}}
-            </label>
+           <div>
+               <label>
+                   {!! Form::checkbox('roles[]', $role->id, null,['class'=>'mr-1'])!!}
+                   {{$role->name}}
+               </label>
+           </div>
+           @endforeach
            
-          </div>
-        
+       {!! Form::submit('Asignar rol',['class' => 'btn btn-outline-primary mt-2'])!!}
+       {!! Form::close()!!}
          
-
-        @endforeach
-        
-        <br>
-
-        <button type="submit" class="btn btn-outline-primary">Asignar Rol</button>
+   </div>
+   </div>
       
-</div>
-</div>
-   
- 
-</x-app-layout>
+    
+   </x-app-layout>
