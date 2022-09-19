@@ -17,6 +17,7 @@
           <p class="h4">Nombre</p>
        <p class="form-control"> {{$user->name}}</p><br>
        <h2 class="h5"> Listado de roles</h2>
+       
        {!! Form::model($user, ['route' => ['users.update',$user], 'method'=> 'put'])!!}    
           
        @foreach ($roles as $role)
@@ -28,9 +29,10 @@
            </div>
            @endforeach
            
-       {!! Form::submit('Asignar rol',['class' => 'btn btn-outline-primary mt-2'])!!}
+       {!! Form::submit('Asignar rol',['class' => 'btn btn-outline-success'])!!}
        {!! Form::close()!!}
          
+
    </div>
    </div>
       

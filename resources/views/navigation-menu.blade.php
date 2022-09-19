@@ -12,10 +12,9 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    @can('Dashboard')
+
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                    @endcan
-                        {{ __('Dashboard') }}
+                        {{ __('Inicio') }}
                     </x-jet-nav-link>
                     @can('Inicio cultivos')
                     <x-jet-nav-link href="{{ route('cultivos.index') }}" :active="request()->routeIs('cultivos*')">
@@ -171,23 +170,38 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
+                {{ __('Inicio') }}
             </x-jet-responsive-nav-link>
+            @can('Inicio cultivos')
             <x-jet-responsive-nav-link href="{{ route('cultivos.index') }}" :active="request()->routeIs('cultivos*')">
                 {{ __('Cultivos') }}
             </x-jet-responsive-nav-link>
+            @endcan
+
+            @can('Inicio insumos')
             <x-jet-responsive-nav-link href="{{ route('insumos.index') }}" :active="request()->routeIs('insumos*')">
                 {{ __('Insumos') }}
             </x-jet-responsive-nav-link>
+            @endcan
+
+            @can('Inicio actividades')
             <x-jet-responsive-nav-link href="{{ route('actividades.index') }}" :active="request()->routeIs('actividades*')">
                 {{ __('Actividades') }}
             </x-jet-responsive-nav-link>
+            @endcan
+
+            @can('Inicio fases')
             <x-jet-responsive-nav-link href="{{ route('fases.index') }}" :active="request()->routeIs('fases*')">
                 {{ __('Fases') }}
             </x-jet-responsive-nav-link>
+            @endcan
+
+            @can('Inicio costos')
             <x-jet-responsive-nav-link href="{{ route('costos.index') }}" :active="request()->routeIs('costos*')">
                 {{ __('Costos') }}
             </x-jet-responsive-nav-link>
+            @endcan
+
         </div>
 
         <!-- Responsive Settings Options -->
