@@ -22,6 +22,8 @@ class RoleSeeder extends Seeder
 
         Permission::create(['name' => 'Dashboard'])->syncRoles($empleado, $almacenista, $superAdmin);
 
+        Permission::create(['name' => 'register'])->syncRoles( $superAdmin);
+
         Permission::create(['name' => 'users.index'])->syncRoles( $superAdmin);
         Permission::create(['name' => 'users.edit'])->syncRoles( $superAdmin);
         Permission::create(['name' => 'users.update'])->syncRoles( $superAdmin);

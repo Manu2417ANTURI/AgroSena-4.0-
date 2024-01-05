@@ -1,12 +1,18 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Cultivos') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    
+    
+  
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8"><br>
+            <div class=" bg-white overflow-hidden  shadow-xl sm:rounded-lg">
+                <nav class="navbar bg-light">
+                      <div class="container-fluid">
+                        <a class="navbar-brand">Lista de Cultivos</a>
+                        
+                      </div>
+                    </nav>
+              </div>
+        <br>
             <div class="p-2">
                 <div class="flex justify-end">
                     <a href="{{ route('cultivos.create') }}">
@@ -25,26 +31,26 @@
                                 <table class="min-w-full">
                                     <thead class="border-b">
                                         <tr>
-                                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                                Nombre
+                                            <th scope="col" class="text-sm font-medium text-green-600 px-6 py-4 text-left">
+                                                <b>Nombre</b>
                                             </th>
-                                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                                Fecha Inicio
+                                            <th scope="col" class="text-sm font-medium text-green-600 px-6 py-4 text-left">
+                                                <b>Fecha Inicio</b>
                                             </th>
-                                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                                Fecha Cosecha
+                                            <th scope="col" class="text-sm font-medium text-green-600 px-6 py-4 text-left">
+                                                <b>Fecha Cosecha</b>
                                             </th>
-                                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                                Area Terreno
+                                            <th scope="col" class="text-sm font-medium text-green-600 px-6 py-4 text-left">
+                                                <b>Area Terreno</b>
                                             </th>
-                                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                                Densidad
+                                            <th scope="col" class="text-sm font-medium text-green-600 px-6 py-4 text-left">
+                                               <b>Densidad</b> 
                                             </th>
-                                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                                Tipo Cultivo
+                                            <th scope="col" class="text-sm font-medium text-green-600 px-6 py-4 text-left">
+                                                <b>Tipo Cultivo</b>
                                             </th>
-                                            <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                                Acciones
+                                            <th scope="col" class="text-sm font-medium text-green-600 px-6 py-4 text-left">
+                                                <b>Acciones</b>
                                             </th>
 
 
@@ -100,8 +106,10 @@
                 </div>
             </div>
         </div>
+    
     </div>
-
     
 
 </x-app-layout>
+<br>
+<x-footer/>

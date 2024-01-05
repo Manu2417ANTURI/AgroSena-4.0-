@@ -2,3 +2,5 @@
 
  @livewire('adminusers-index')
 </x-app-layout>
+<br>
+<x-footer/>
